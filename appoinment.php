@@ -6,7 +6,6 @@ if(isset($_POST['submit'])){
     $email = $_POST['email']; // this is the sender's Email address
     $phone = $_POST['phone']; // this is the sender's Email address
     $date = $_POST['date']; // this is the sender's Email address
-    $address = $_POST['address']; // this is the sender's Email address
     $department = $_POST['department']; // this is the sender's Email address
     $doctor = $_POST['doctor']; // this is the sender's Email address
     $subject = "Appoinment";
@@ -16,7 +15,7 @@ if(isset($_POST['submit'])){
 
     $headers = "From:" . $from;
     $headers2 = "From:" . $to; 
-    mail($to,$name,$email,$phone,$date,$address,$department,$doctor,$subject,$message,$headers);
+    mail($to,$name,$email,$phone,$date,$department,$doctor,$subject,$message,$headers);
     mail($from,$name,$email,$phone,$date,$department,$doctor,$subject2,$message2,$headers2); // sends a copy of the message to the sender
     echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
     // You can also use header('Location: thank_you.php'); to redirect to another page.
